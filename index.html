@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智模科技 - 工业模具AI优化项目商业计划书</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-shims.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        accent: '#722ED1',
+                        dark: '#1D2129',
+                        light: '#F2F3F5'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #165DFF 0%, #36CFC9 100%);
+            }
+            .section-divider {
+                height: 4px;
+                width: 60px;
+                background: linear-gradient(90deg, #165DFF, #36CFC9);
+                border-radius: 2px;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-dark">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                    <i class="fa fa-cube text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-primary">智模科技</h1>
+                    <p class="text-xs text-gray-500">AImold Technologies</p>
+                </div>
+            </div>
+
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#overview" class="nav-link text-gray-700 hover:text-primary transition-colors">项目概述</a>
+                <a href="#team" class="nav-link text-gray-700 hover:text-primary transition-colors">团队介绍</a>
+                <a href="#product" class="nav-link text-gray-700 hover:text-primary transition-colors">产品介绍</a>
+                <a href="#strategy" class="nav-link text-gray-700 hover:text-primary transition-colors">公司战略</a>
+                <a href="#finance" class="nav-link text-gray-700 hover:text-primary transition-colors">融资计划</a>
+            </div>
+
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-gray-700" id="menuBtn">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#overview" class="text-gray-700 hover:text-primary py-2 transition-colors">项目概述</a>
+                <a href="#team" class="text-gray-700 hover:text-primary py-2 transition-colors">团队介绍</a>
+                <a href="#product" class="text-gray-700 hover:text-primary py-2 transition-colors">产品介绍</a>
+                <a href="#strategy" class="text-gray-700 hover:text-primary py-2 transition-colors">公司战略</a>
+                <a href="#finance" class="text-gray-700 hover:text-primary py-2 transition-colors">融资计划</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 text-shadow leading-tight">
+                    工业模具智能优化系统
+                </h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] mb-8 opacity-90 leading-relaxed">
+                    计算机视觉（AI）+ 计算机图形学优化工业领域模具制造流程<br>
+                    数字孪生技术在CAD+CAM框架下的创新应用
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#overview" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors shadow-lg">
+                        <i class="fa fa-info-circle mr-2"></i>了解更多
+                    </a>
+                    <a href="#finance" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors">
+                        <i class="fa fa-line-chart mr-2"></i>融资计划
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- 项目概述 -->
+        <section id="overview" class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">项目概述</h2>
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        智模科技致力于通过人工智能和计算机图形学技术，
+                        为工业模具制造领域提供智能化解决方案，
+                        实现设计效率提升、成本降低和质量优化。
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa fa-lightbulb-o text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">技术创新</h3>
+                        <p class="text-gray-600">
+                            融合AI与图形学技术，打造独特的数字孪生解决方案，
+                            实现工业模具制造的智能化升级。
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa fa-rocket text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">市场领先</h3>
+                        <p class="text-gray-600">
+                            专注于细分领域的深度优化，提供定制化服务，
+                            在竞争中建立独特优势。
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa fa-money text-accent text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">商业价值</h3>
+                        <p class="text-gray-600">
+                            为客户提供显著的效率提升和成本节约，
+                            创造巨大的商业价值和投资回报。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 团队介绍 -->
+        <section id="team" class="mb-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">团队介绍</h2>
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        核心团队拥有跨学科的专业背景和丰富的实战经验，
+                        是项目成功的关键保障。
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- 团队成员1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
+                        <div class="h-48 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center">
+                                <i class="fa fa-user text-primary text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-1">[您的姓名]</h3>
+                            <p class="text-primary font-medium mb-3">技术负责人</p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                英国利兹大学引擎专业，澳国立大学AI领域硕士
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-cogs mr-2"></i>
+                                <span>算法架构设计、技术路线规划</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 团队成员2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
+                        <div class="h-48 bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
+                            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center">
+                                <i class="fa fa-user text-secondary text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-1">老马</h3>
+                            <p class="text-secondary font-medium mb-3">引擎技术专家</p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                英国利兹大学引擎专业
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-cube mr-2"></i>
+                                <span>3D引擎开发、数字孪生骨架搭建</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 团队成员3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
+                        <div class="h-48 bg-gradient-to-br from-accent to-primary flex items-center justify-center">
+                            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center">
+                                <i class="fa fa-user text-accent text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-1">[团队成员A]</h3>
+                            <p class="text-accent font-medium mb-3">AI算法工程师</p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                澳国立大学AI领域硕士
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-eye mr-2"></i>
+                                <span>计算机视觉算法开发</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 团队成员4 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
+                        <div class="h-48 bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                            <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center">
+                                <i class="fa fa-user text-primary text-4xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold mb-1">[团队成员B]</h3>
+                            <p class="text-primary font-medium mb-3">AI算法工程师</p>
+                            <p class="text-gray-600 text-sm mb-4">
+                                澳国立大学AI领域硕士
+                            </p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fa fa-brain mr-2"></i>
+                                <span>深度学习模型训练与优化</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 核心竞争力 -->
+                <div class="mt-12 bg-white rounded-xl p-8 shadow-md">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-star text-primary mr-3"></i>
+                        核心竞争力来源
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-lg mb-3">技术核心优势</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>跨学科技术融合：同时具备图形学和计算机视觉的专业知识</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>实战经验丰富：曾合作制造3D引擎，具备丰富的技术实现经验</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>场景调研能力：拥有丰富的工业场景可以调研，深入了解用户需求</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span>快速落地能力：产品落地速度快，能够快速响应市场需求变化</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-lg mb-3">团队协同优势</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>团队成员具备互补的技术背景</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>已有成功合作经验，协作效率高</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span>对工业领域有深入理解，能够精准把握用户需求</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 产品介绍 -->
+        <section id="product" class="mb-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">产品介绍</h2>
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        工业模具智能优化系统，通过AI和图形学技术实现模具制造的智能化升级。
+                    </p>
+                </div>
+
+                <!-- 产品架构 -->
+                <div class="bg-white rounded-xl p-8 shadow-md mb-10">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-sitemap text-primary mr-3"></i>
+                        产品结构与技术架构
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">系统架构</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fa fa-desktop text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium">前端模块</h5>
+                                        <p class="text-sm text-gray-600">用户交互界面，支持CAD/CAM软件集成</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fa fa-cogs text-secondary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium">核心引擎</h5>
+                                        <p class="text-sm text-gray-600">3D引擎架构，负责模型渲染和场景模拟</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fa fa-brain text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium">AI算法模块</h5>
+                                        <p class="text-sm text-gray-600">计算机视觉算法，负责特征识别和优化建议</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">核心技术组件</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fa fa-cube text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium">3D引擎</h5>
+                                        <p class="text-sm text-gray-600">自研核心技术，具备高效渲染和模拟能力</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fa fa-code text-secondary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium">AI算法库</h5>
+                                        <p class="text-sm text-gray-600">包含图像识别、特征提取、优化算法等</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
+                                    <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
+                                        <i class="fa fa-cloud text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium">云计算支持</h5>
+                                        <p class="text-sm text-gray-600">可选云端部署，支持大规模计算需求</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 性能表现 -->
+                <div class="bg-white rounded-xl p-8 shadow-md mb-10">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-tachometer text-primary mr-3"></i>
+                        产品性能表现
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">核心评价指标</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">设计效率提升</span>
+                                        <span class="text-primary font-bold">X%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">加工精度优化</span>
+                                        <span class="text-secondary font-bold">X%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-secondary h-2 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">成本节约比例</span>
+                                        <span class="text-accent font-bold">X%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-accent h-2 rounded-full" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">错误率降低</span>
+                                        <span class="text-primary font-bold">X%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">性能优势分析</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span><strong>智能识别：</strong>AI算法能够自动识别设计中的潜在问题</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                    <span><strong>优化建议：</strong>基于大数据分析提供优化建议</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-accent mt-1 mr-2"></i>
+                                    <span><strong>实时反馈：</strong>提供实时的设计和制造反馈</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span><strong>预测分析：</strong>预测制造过程中可能出现的问题</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 竞品分析 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-bar-chart text-primary mr-3"></i>
+                        竞品分析
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-gray-700">对比维度</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-primary">智模科技</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-gray-700">海克斯康VISI</th>
+                                    <th class="px-4 py-3 text-left text-sm font-medium text-gray-700">传统CAD/CAM</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-700">细分领域深度</td>
+                                    <td class="px-4 py-3 text-sm text-primary font-medium">优秀</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">一般</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">较差</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-700">AI技术应用</td>
+                                    <td class="px-4 py-3 text-sm text-primary font-medium">深度融合</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">初步应用</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">基本没有</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-700">定制化能力</td>
+                                    <td class="px-4 py-3 text-sm text-primary font-medium">强</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">中等</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">弱</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-700">成本效益</td>
+                                    <td class="px-4 py-3 text-sm text-primary font-medium">高</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">中等</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">低</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-700">落地速度</td>
+                                    <td class="px-4 py-3 text-sm text-primary font-medium">快</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">中等</td>
+                                    <td class="px-4 py-3 text-sm text-gray-600">慢</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公司战略 -->
+        <section id="strategy" class="mb-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">公司战略</h2>
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        明确的发展战略和清晰的执行路径，确保公司持续健康发展。
+                    </p>
+                </div>
+
+                <!-- 未来定位 -->
+                <div class="grid md:grid-cols-3 gap-6 mb-10">
+                    <!-- 短期定位 -->
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa fa-bullseye text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">短期定位 (1-2年)</h3>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                <span>专注于核心技术的完善和优化</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                <span>在CAD+CAM架构中做加法，提供优化解决方案</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                <span>为客户节约设计和工程师人力成本</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                                <span>建立技术优势，获得第一批客户认可</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 中期定位 -->
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa fa-rocket text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">中期定位 (3-5年)</h3>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                <span>完善数字孪生技术，建立完整技术生态</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                <span>成为工业模具智能优化领域的领先企业</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                <span>为客户提供全面的智能制造解决方案</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-secondary mt-1 mr-2"></i>
+                                <span>扩大市场份额，建立品牌影响力</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 长期定位 -->
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa fa-globe text-accent text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3">长期定位 (5年以上)</h3>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-accent mt-1 mr-2"></i>
+                                <span>成为工业数字孪生技术的领导者</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-accent mt-1 mr-2"></i>
+                                <span>覆盖多个工业领域，成为行业标准制定者</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-accent mt-1 mr-2"></i>
+                                <span>推动工业制造向智能化、数字化转型</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-angle-right text-accent mt-1 mr-2"></i>
+                                <span>国际化发展，成为全球领先的工业软件企业</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 产品迭代方向 -->
+                <div class="bg-white rounded-xl p-8 shadow-md mb-10">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-refresh text-primary mr-3"></i>
+                        产品迭代方向
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">技术迭代方向</h4>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h5 class="font-medium mb-2">性能优化方向</h5>
+                                    <ul class="space-y-1 text-sm text-gray-600">
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-primary mt-1 mr-2"></i>
+                                            <span>提升算法的准确性和效率</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-primary mt-1 mr-2"></i>
+                                            <span>优化3D引擎的渲染性能</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-primary mt-1 mr-2"></i>
+                                            <span>增强AI模型的学习能力</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h5 class="font-medium mb-2">便捷性优化方向</h5>
+                                    <ul class="space-y-1 text-sm text-gray-600">
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-secondary mt-1 mr-2"></i>
+                                            <span>简化用户操作流程</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-secondary mt-1 mr-2"></i>
+                                            <span>提升系统的易用性</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-secondary mt-1 mr-2"></i>
+                                            <span>优化与其他软件的集成</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">市场拓展方向</h4>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h5 class="font-medium mb-2">客户画像拓展</h5>
+                                    <ul class="space-y-1 text-sm text-gray-600">
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-accent mt-1 mr-2"></i>
+                                            <span>从大型企业向中小企业拓展</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-accent mt-1 mr-2"></i>
+                                            <span>从模具制造向其他制造领域拓展</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-accent mt-1 mr-2"></i>
+                                            <span>从国内市场向国际市场拓展</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h5 class="font-medium mb-2">应用场景拓展</h5>
+                                    <ul class="space-y-1 text-sm text-gray-600">
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-primary mt-1 mr-2"></i>
+                                            <span>从模具设计向其他工业设计领域拓展</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-primary mt-1 mr-2"></i>
+                                            <span>从制造环节向全产业链拓展</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fa fa-caret-right text-primary mt-1 mr-2"></i>
+                                            <span>从单一功能向综合解决方案拓展</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技术创新源泉 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-lightbulb-o text-primary mr-3"></i>
+                        技术创新源泉
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 border border-gray-200 rounded-lg">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-code-fork text-primary text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-3">跨学科技术融合</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>计算机视觉与图形学的深度融合</li>
+                                <li>AI技术与工业制造的创新结合</li>
+                                <li>数字孪生技术的独特应用</li>
+                            </ul>
+                        </div>
+                        <div class="text-center p-6 border border-gray-200 rounded-lg">
+                            <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-code text-secondary text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-3">算法创新</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>自主研发的优化算法</li>
+                                <li>针对工业场景的深度学习模型</li>
+                                <li>实时数据处理和分析技术</li>
+                            </ul>
+                        </div>
+                        <div class="text-center p-6 border border-gray-200 rounded-lg">
+                            <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-sitemap text-accent text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-3">架构创新</h4>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>灵活可扩展的系统架构</li>
+                                <li>高效的3D引擎设计</li>
+                                <li>模块化的软件设计理念</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 融资计划 -->
+        <section id="finance" class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">融资计划</h2>
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        合理的融资规划和清晰的投资回报预期，为投资者创造价值。
+                    </p>
+                </div>
+
+                <!-- 融资需求 -->
+                <div class="bg-white rounded-xl p-8 shadow-md mb-10">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-money text-primary mr-3"></i>
+                        融资需求
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">资金需求</h4>
+                            <div class="text-center mb-6">
+                                <div class="text-4xl font-bold text-primary mb-2">X万元</div>
+                                <div class="text-gray-600">总融资需求</div>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">研发投入</span>
+                                        <span class="text-primary font-bold">X万元 (X%)</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">市场推广</span>
+                                        <span class="text-secondary font-bold">X万元 (X%)</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-secondary h-2 rounded-full" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">团队建设</span>
+                                        <span class="text-accent font-bold">X万元 (X%)</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-accent h-2 rounded-full" style="width: 20%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">运营资金</span>
+                                        <span class="text-primary font-bold">X万元 (X%)</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 10%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-4">融资方式</h4>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h5 class="font-medium flex items-center mb-2">
+                                        <i class="fa fa-shares text-primary mr-2"></i>
+                                        股权融资
+                                    </h5>
+                                    <p class="text-sm text-gray-600 mb-2">出让 X% 股权，融资 X 万元</p>
+                                    <div class="text-xs text-gray-500">
+                                        主要用于核心技术研发和团队建设
+                                    </div>
+                                </div>
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h5 class="font-medium flex items-center mb-2">
+                                        <i class="fa fa-building text-secondary mr-2"></i>
+                                        债权融资
+                                    </h5>
+                                    <p class="text-sm text-gray-600 mb-2">申请银行贷款 X 万元</p>
+                                    <div class="text-xs text-gray-500">
+                                        主要用于运营资金和市场推广
+                                    </div>
+                                </div>
+                                <div class="p-4 bg-gray-50 rounded-lg">
+                                    <h5 class="font-medium flex items-center mb-2">
+                                        <i class="fa fa-flag text-accent mr-2"></i>
+                                        政府扶持
+                                    </h5>
+                                    <p class="text-sm text-gray-600 mb-2">申请政府科技扶持资金 X 万元</p>
+                                    <div class="text-xs text-gray-500">
+                                        主要用于技术研发和创新项目
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 投资回报预测 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-line-chart text-primary mr-3"></i>
+                        投资回报预测
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center p-6 border border-gray-200 rounded-lg">
+                            <div class="text-3xl font-bold text-primary mb-2">第一年</div>
+                            <div class="text-gray-600 mb-4">市场拓展期</div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">营业收入：</span>
+                                    <span class="font-medium">X万元</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">净利润：</span>
+                                    <span class="text-red-500 font-medium">-X万元</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">市场份额：</span>
+                                    <span class="font-medium">X%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center p-6 border border-gray-200 rounded-lg">
+                            <div class="text-3xl font-bold text-secondary mb-2">第二年</div>
+                            <div class="text-gray-600 mb-4">快速成长期</div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">营业收入：</span>
+                                    <span class="font-medium">X万元</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">净利润：</span>
+                                    <span class="text-green-500 font-medium">X万元</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">市场份额：</span>
+                                    <span class="font-medium">X%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center p-6 border border-gray-200 rounded-lg">
+                            <div class="text-3xl font-bold text-accent mb-2">第三年</div>
+                            <div class="text-gray-600 mb-4">稳定发展期</div>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">营业收入：</span>
+                                    <span class="font-medium">X万元</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">净利润：</span>
+                                    <span class="text-green-500 font-medium">X万元</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">市场份额：</span>
+                                    <span class="font-medium">X%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold mb-4">投资回报关键指标</h4>
+                        <div class="grid md:grid-cols-4 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-primary mb-1">X年</div>
+                                <div class="text-sm text-gray-600">预计投资回收期</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-secondary mb-1">X%</div>
+                                <div class="text-sm text-gray-600">预计内部收益率</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-accent mb-1">IPO</div>
+                                <div class="text-sm text-gray-600">预计退出方式</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-primary mb-1">X年</div>
+                                <div class="text-sm text-gray-600">预计退出时间</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 总结与展望 -->
+        <section class="mb-12">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">总结与展望</h2>
+                    <div class="section-divider mx-auto mb-6"></div>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 flex items-center">
+                                <i class="fa fa-check-circle text-primary mr-3"></i>
+                                项目核心价值
+                            </h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-star text-primary mt-1 mr-2"></i>
+                                    <span>利用AI和图形学技术优化工业模具制造流程</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-star text-primary mt-1 mr-2"></i>
+                                    <span>为客户提供显著的效率提升和成本节约</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-star text-primary mt-1 mr-2"></i>
+                                    <span>推动工业制造向智能化、数字化转型</span>
+                                </li>
+                            </ul>
+
+                            <h3 class="text-xl font-bold mt-8 mb-4 flex items-center">
+                                <i class="fa fa-trophy text-secondary mr-3"></i>
+                                竞争优势
+                            </h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-shield text-secondary mt-1 mr-2"></i>
+                                    <span>技术团队具备跨学科的专业背景</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-shield text-secondary mt-1 mr-2"></i>
+                                    <span>产品具有明显的差异化竞争优势</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-shield text-secondary mt-1 mr-2"></i>
+                                    <span>市场定位精准，目标客户明确</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-shield text-secondary mt-1 mr-2"></i>
+                                    <span>商业模式清晰，盈利前景良好</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 flex items-center">
+                                <i class="fa fa-eye text-accent mr-3"></i>
+                                发展愿景
+                            </h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-bullseye text-accent mt-1 mr-2"></i>
+                                    <span>成为工业数字孪生技术的领导者</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-bullseye text-accent mt-1 mr-2"></i>
+                                    <span>推动工业制造向智能化、数字化转型</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-bullseye text-accent mt-1 mr-2"></i>
+                                    <span>为客户创造更大的价值和竞争力</span>
+                                </li>
+                            </ul>
+
+                            <h3 class="text-xl font-bold mt-8 mb-4 flex items-center">
+                                <i class="fa fa-bullseye text-primary mr-3"></i>
+                                发展目标
+                            </h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-flag text-primary mt-1 mr-2"></i>
+                                    <span>短期内成为细分领域的领先企业</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-flag text-primary mt-1 mr-2"></i>
+                                    <span>中期内成为行业的重要参与者</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-flag text-primary mt-1 mr-2"></i>
+                                    <span>长期内成为全球领先的工业软件企业</span>
+                                </li>
+                            </ul>
+
+                            <h3 class="text-xl font-bold mt-8 mb-4 flex items-center">
+                                <i class="fa fa-heart text-secondary mr-3"></i>
+                                社会责任
+                            </h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-handshake-o text-secondary mt-1 mr-2"></i>
+                                    <span>推动制造业的技术进步和产业升级</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-handshake-o text-secondary mt-1 mr-2"></i>
+                                    <span>为社会创造更多的就业机会</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-handshake-o text-secondary mt-1 mr-2"></i>
+                                    <span>为国家的工业发展做出贡献</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                                <i class="fa fa-cube text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">智模科技</h3>
+                                <p class="text-sm text-gray-400">AImold Technologies</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            专注于工业模具智能优化的高科技企业，
+                            致力于通过AI技术推动制造业的数字化转型。
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">快速链接</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#overview" class="hover:text-white transition-colors">项目概述</a></li>
+                            <li><a href="#team" class="hover:text-white transition-colors">团队介绍</a></li>
+                            <li><a href="#product" class="hover:text-white transition-colors">产品介绍</a></li>
+                            <li><a href="#strategy" class="hover:text-white transition-colors">公司战略</a></li>
+                            <li><a href="#finance" class="hover:text-white transition-colors">融资计划</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">联系我们</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-center">
+                                <i class="fa fa-envelope mr-2"></i>
+                                <span>contact@aimoldtech.com</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-phone mr-2"></i>
+                                <span>+86 123 4567 8910</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-map-marker mr-2"></i>
+                                <span>中国·苏州</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">关注我们</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                                <i class="fa fa-weixin text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                                <i class="fa fa-weibo text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                                <i class="fa fa-linkedin text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                    <p>© 2024 智模科技 AImold Technologies. 保留所有权利。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow');
+                navbar.classList.remove('py-3');
+            } else {
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2', 'shadow');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // 关闭移动端菜单
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 数字动画效果
+        function animateNumbers() {
+            const numberElements = document.querySelectorAll('.animate-number');
+
+            numberElements.forEach(element => {
+                const target = parseInt(element.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+                    element.textContent = Math.floor(current);
+                }, 16);
+            });
+        }
+
+        // 滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // 观察所有卡片元素
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+
+        // 页面加载完成后执行
+        window.addEventListener('load', () => {
+            // 添加淡入动画类
+            document.body.classList.add('animate-fade-in');
+
+            // 执行数字动画
+            setTimeout(animateNumbers, 500);
+        });
+
+        // 添加CSS动画
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-fade-in {
+                animation: fadeIn 0.6s ease-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
